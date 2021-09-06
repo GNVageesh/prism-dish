@@ -18,7 +18,10 @@ const AddNewDish = () => {
 				author,
 				name,
 				description,
-				image_url: url,
+				image_url:
+					url.length !== 0
+						? url
+						: "https://www.food4fuel.com/wp-content/uploads/woocommerce-placeholder-600x600.png",
 				ingredients: ingredients,
 				procedure,
 			})
@@ -45,6 +48,7 @@ const AddNewDish = () => {
 								name="addName"
 								placeholder="Food Name"
 								className={styles.inFields}
+								required
 								value={name}
 								onChange={(e) => setName(e.target.value)}
 							/>
@@ -64,6 +68,7 @@ const AddNewDish = () => {
 								placeholder="Food Description"
 								className={styles.inFields}
 								value={description}
+								required
 								onChange={(e) => setDescription(e.target.value)}
 							/>
 						</div>
@@ -74,6 +79,7 @@ const AddNewDish = () => {
 								placeholder="Image URL"
 								className={styles.inFields}
 								value={url}
+								required
 								onChange={(e) => setUrl(e.target.value)}
 							/>
 						</div>
@@ -87,6 +93,7 @@ const AddNewDish = () => {
 									name ? name : "My Awesome Dish"
 								}... (Separate by Comma)`}
 								value={ingredients}
+								required
 								onChange={(e) =>
 									setIngredients(e.target.value.split(","))
 								}
@@ -102,6 +109,7 @@ const AddNewDish = () => {
 									name ? name : "My Awesome Dish"
 								}... (Separate by Comma)`}
 								value={procedure}
+								required
 								onChange={(e) => setProcedure(e.target.value)}
 							/>
 						</div>
