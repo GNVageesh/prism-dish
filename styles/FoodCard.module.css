@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Megrim");
+@import url("https://fonts.googleapis.com/css?family=Varela");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+.main {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.card {
+	border: 2px solid #3d3c3c;
+	text-align: center;
+	padding: 16px 32px;
+	box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+	margin: 15px;
+}
+
+.image {
+	border-radius: 25px;
+}
+
+.title {
+	font-size: 50px;
+	font-family: "Megrim";
+}
+
+.desc {
+	font-family: Oxygen;
+	margin-top: -15px;
+	font-size: 20px;
+}
+
+.link {
+	font-family: Ubuntu;
+	border-bottom: 2px solid #2d7503;
+	font-size: 20px;
+}

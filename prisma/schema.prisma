@@ -11,13 +11,11 @@ generator client {
 }
 
 model Dishes {
-  id          String    @id @default(uuid())
-  author      String?   @default("Unknown")
-  name        String    @unique
-  description String?   @default("A Very Special Dish")
-  image_url   String?   @default("https://vaya.in/recipes/wp-content/themes/neptune-by-osetin/assets/img/placeholder.jpg")
+  id          String   @id @default(uuid())
+  author      String?  @default("Unknown")
+  name        String   @unique
+  description String?  @default("A Very Special Dish")
+  image_url   String?  @default("https://vaya.in/recipes/wp-content/themes/neptune-by-osetin/assets/img/placeholder.jpg")
   ingredients String[]
   procedure   String
-  createdAt   DateTime? @default(now())
-  updatedAt   DateTime? @updatedAt
 }

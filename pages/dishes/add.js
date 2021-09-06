@@ -19,7 +19,7 @@ const AddNewDish = () => {
 				name,
 				description,
 				image_url: url,
-				ingredients,
+				ingredients: ingredients,
 				procedure,
 			})
 			.then(() => router.push("/"))
@@ -39,7 +39,7 @@ const AddNewDish = () => {
 							addNew();
 						}}
 					>
-						<div>
+						<div className={styles.grid}>
 							<input
 								type="text"
 								name="addName"
@@ -47,6 +47,14 @@ const AddNewDish = () => {
 								className={styles.inFields}
 								value={name}
 								onChange={(e) => setName(e.target.value)}
+							/>
+							<input
+								type="text"
+								name="addAuthor"
+								placeholder="Your Name"
+								className={styles.inFields}
+								value={author}
+								onChange={(e) => setAuthor(e.target.value)}
 							/>
 						</div>
 						<div>
@@ -70,16 +78,6 @@ const AddNewDish = () => {
 							/>
 						</div>
 						<div>
-							<input
-								type="text"
-								name="addAuthor"
-								placeholder="Your Name"
-								className={styles.inFields}
-								value={author}
-								onChange={(e) => setAuthor(e.target.value)}
-							/>
-						</div>
-						<div>
 							<textarea
 								type="text"
 								className={styles.itemsField}
@@ -90,9 +88,7 @@ const AddNewDish = () => {
 								}... (Separate by Comma)`}
 								value={ingredients}
 								onChange={(e) =>
-									setIngredients(
-										e.target.value.trim().split(",")
-									)
+									setIngredients(e.target.value.split(","))
 								}
 							/>
 						</div>
