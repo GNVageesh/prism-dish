@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../../styles/Add.module.css";
@@ -31,6 +32,9 @@ const AddNewDish = () => {
 
 	return (
 		<div>
+			<Head>
+				<title>PrismDish | Add New</title>
+			</Head>
 			<div className={styles.main}>
 				<div>
 					<h1>Add New Recipe</h1>
@@ -76,10 +80,9 @@ const AddNewDish = () => {
 							<input
 								type="text"
 								name="addUrl"
-								placeholder="Image URL"
+								placeholder="https://dishimage.com/image.png"
 								className={styles.inFields}
 								value={url}
-								required
 								onChange={(e) => setUrl(e.target.value)}
 							/>
 						</div>
